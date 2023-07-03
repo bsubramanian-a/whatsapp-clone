@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=Roboto:wght@400;700&display=swap');
+
+* {
+  /* border: none; */
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  user-select: none;
+}
+
+input:-webkit-autofill {
+  transition: 'color 9999s ease-out, background-color 9999s ease-out';
+  transition-delay: 9999s;
+}
+.full-width-display {
+  display: none;
+}
+svg {
+  font-size: x-large;
+}
+input,
+textarea {
+  background: transparent;
+}
+
+a {
+  text-decoration: underline;
+  color: #0c4a6e;
+}
+.dark a {
+  color: #bae6fd;
+}
+
+/* Remove arrow icon in number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
