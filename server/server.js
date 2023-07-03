@@ -37,7 +37,7 @@ if (!config.isDev) {
 }
 
 // store socket on global object
-global.io = new SocketServer(server, { cors: config.cors });
+global.io = new SocketServer(server, { cors: config.cors,perMessageDeflate :false });
 require('./socket');
 
 module.exports = server;
