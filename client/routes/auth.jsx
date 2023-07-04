@@ -7,7 +7,7 @@ function Auth() {
   const [respond, setRespond] = useState({ success: true, message: null });
 
   return (
-    <div className="absolute w-full h-full flex justify-center overflow-auto bg-spill sm:bg-spill custom-bg-sign">
+    <div className="w-screen h-screen flex justify-center overflow-auto bg-spill sm:bg-spill custom-bg-sign">
       <h1 className="font-bold text-4xl text-white font-display text-center tracking-[.20em]">
         Welcome to iMax
       </h1>
@@ -17,7 +17,7 @@ function Auth() {
           alt=""
           className="rounded-full md:w-full w-[300px] md:basis-3/5 basis-auto md:h-full h-[300px] bg-cover md-5 mx-auto md:rounded-none justify-center"
         />
-        <div className="p-6 mt-6 rounded-md flex flex-col justify-center bg-spill basis-2/5 gap-6">
+        <div className="p-1 mt-2 p-md-6 mt-md-6 rounded-md flex flex-col justify-center bg-spill basis-2/5 gap-6">
           {/* header */}
           <div className="mb-4">
             {respond.message && (

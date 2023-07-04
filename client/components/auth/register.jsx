@@ -143,10 +143,10 @@ function Register() {
           >
             <p>AGREE AND CONTINUE</p>
           </button>
-          <div className="pt-10">
+          <div className="pt-4 pt-md-10">
             <p className="mt-4 text-center font-display text-spill-400">by</p>
             <p className="text-sky-800 text-center font-bold ">
-              CHOC-CITY GROUP OF COMPANIES
+              CHOC-CITY GROUP OF COMPANIES1
             </p>
           </div>
         </div>
