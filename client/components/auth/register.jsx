@@ -7,8 +7,7 @@ import config from '../../config';
 import axios from 'axios';
 import * as bi from 'react-icons/bi';
 import COtpInput from '../blocks/OtpInput';
-function Register() {
-  const [step, setStep] = useState(0);
+function Register({step, setStep}) {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('');
   const [phoneCode, setPhoneCode] = useState('');
@@ -152,51 +151,53 @@ function Register() {
         </div>
       )}
       {step === 1 && (
-        <div className="">
-          <p className="font-display text-center text-spill-400 text-[20px]">
-            Verify your phone number
-          </p>
-          <p className="font-display text-center my-4 text-spill-400 text-md text-[20px]">
-            iMax will need to verify your account.
-          </p>
-          <div className="w-full">
-            <Dropdown
-              options={countries}
-              value={country.label}
-              onChange={handleCountry}
-            />
-          </div>
-          <div className="mt-4 flex items-center gap-4">
-            <div className="w-1/3">
-              <div className="border-b py-2 px-2 text-spill-300 border-emerald-600">
-                + {phoneCode}
-              </div>
-            </div>
-            <div className="w-2/3">
-              <Input
-                type="number"
-                value={phoneNumber}
-                onChange={handlePhoneNumber}
+        <div className="login_page_container">
+          <div>
+            <p className="font-display text-center text-spill-400 text-[20px]">
+              Verify your phone number
+            </p>
+            <p className="font-display text-center my-4 text-spill-400 text-md text-[20px]">
+              iMax will need to verify your account.
+            </p>
+            <div className="w-full">
+              <Dropdown
+                options={countries}
+                value={country.label}
+                onChange={handleCountry}
               />
+            </div>
+            <div className="mt-4 flex items-center gap-4">
+              <div className="w-1/3">
+                <div className="border-b py-2 px-2 text-spill-300 border-emerald-600">
+                  + {phoneCode}
+                </div>
+              </div>
+              <div className="w-2/3">
+                <Input
+                  type="number"
+                  value={phoneNumber}
+                  onChange={handlePhoneNumber}
+                />
+              </div>
             </div>
           </div>
           {error && <p style={{color: 'red'}} className='mt-2 text-center'>{error}</p>}
-          <div className="mt-8">
-            <button
-              type="button"
-              onClick={sendOTP}
-              disabled={process}
-              className="mt-6 py-2 mx-auto px-14 w-fit flex justify-center font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700"
-            >
-              {process ? (
-                <i className="animate-spin">
-                  <bi.BiLoaderAlt />
-                </i>
-              ) : (
-                <p>Register</p>
-              )}
-            </button>
-          </div>
+            <div className="mt-8 mb-8">
+              <button
+                type="button"
+                onClick={sendOTP}
+                disabled={process}
+                className="mt-6 py-2 mx-auto px-14 w-fit flex justify-center font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700"
+              >
+                {process ? (
+                  <i className="animate-spin">
+                    <bi.BiLoaderAlt />
+                  </i>
+                ) : (
+                  <p>Login</p>
+                )}
+              </button>
+            </div>
         </div>
       )}
       {step === 2 && (
