@@ -1,0 +1,19 @@
+services:
+  - name: client
+    type: web
+    buildCommand: |
+      rm -rf client/build &&    # Remove existing build directory
+      cd client &&              # Navigate to the client directory
+      npm install &&            # Install client dependencies
+      npm run build             # Build the client
+    publish: 
+      - source: client/build
+        destination: /usr/share/nginx/html
+
+  - name: server
+    type: web
+    buildCommand: |
+      cd server &&              # Navigate to the server directory
+      npm install &&            # Install server dependencies
+      npm run build             # Build the server
+    startCommand: npm start
